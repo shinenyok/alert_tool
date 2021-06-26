@@ -4,22 +4,23 @@ A flutter plugin imitates iOS style pop-up window
 
 ## Getting Started
 
-1 Add flutter_tex latest  [![pub package](https://pub.dev/packages/alert_tool) version under dependencies to your package's pubspec.yaml file.
+### 1 Add alert_tool latest version under dependencies to your package's pubspec.yaml file.
 
 ```yaml
 dependencies:
   alert_tool: ^0.0.1``` 
 ```
 
-2 You can install packages from the command line:
+### 2 You can install packages from the command line:
 ```bash
 $ flutter packages get
 ```
 
-3 Api Usage
+### 3 Api Usage
 
+
+* 中间弹出的提示弹窗
 ```
-///中间弹出的提示弹窗
   AlertTool.showTipAlert({
     required BuildContext context,
 
@@ -71,8 +72,9 @@ $ flutter packages get
       },
     );
   }
-
-  ///底部弹出的选择提示弹窗
+```
+* 底部弹出的选择提示弹窗
+```
   AlertTool.showBottomSheet({
     required BuildContext context,
 
@@ -108,7 +110,9 @@ $ flutter packages get
       },
     );
   }
-
+```
+* 输入弹窗
+```
   AlertTool.showInputAlert({
     required BuildContext context,
 
