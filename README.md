@@ -8,7 +8,7 @@ A flutter plugin imitates iOS style pop-up window
 
 ```yaml
 dependencies:
-  alert_tool: ^0.0.1``` 
+  alert_tool: ^0.0.1
 ```
 
 ### 2 You can install packages from the command line:
