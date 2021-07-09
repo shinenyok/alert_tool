@@ -10,14 +10,19 @@ import 'package:flutter/material.dart';
 class BottomSheetView extends StatelessWidget {
   ///标题文字描述
   final String title;
+
   ///选项列表
   final List<String> options;
+
   ///标题文字样式
   final TextStyle? titleTextStyle;
+
   ///选项内容文字样式
   final TextStyle? optionTextStyle;
+
   ///取消按钮文字样式
   final TextStyle? cancelTextStyle;
+
   ///确定选中选项
   final Function(String option) didOptionSelected;
 

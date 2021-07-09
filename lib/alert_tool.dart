@@ -4,11 +4,13 @@
  * @description: flutter
  */
 
+import 'package:alert_tool/util/popup_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'util/alert_view.dart';
 import 'util/bottom_sheet_view.dart';
 import 'util/input_view.dart';
+export 'package:alert_tool/util/popup_view.dart';
 
 class AlertTool {
   ///中间弹出的提示弹窗
@@ -155,6 +157,76 @@ class AlertTool {
           cancelAction: cancelAction,
           confirmTextStyle: confirmTextStyle,
           cancelTextStyle: cancelTextStyle,
+        );
+      },
+    );
+  }
+
+  static showPopMenu(
+    BuildContext context, {
+
+    ///弹窗view位置上方所在widget的标识
+    required GlobalKey originKey,
+
+    ///item数据源
+    required List<PopModel> itemsData,
+
+    ///item点击选中时回调
+    Function(int, PopModel)? clickCallback,
+
+    ///不展示小三角 默认展示
+    bool? noTriangle,
+
+    ///弹窗背景色
+    Color? backgroundColor,
+
+    ///默认选中的item标题
+    String? selectedText,
+
+    ///item字体颜色
+    Color? itemTitleColor,
+
+    ///item图标颜色
+    Color? itemIconColor,
+
+    ///item选中时字体颜色
+    Color? itemSelectedColor,
+
+    ///item高度 默认50
+    double? itemHeight,
+
+    ///item宽度 默认120
+    double? itemWidth,
+
+    ///item间隔线颜色
+    Color? dividerColor,
+
+    ///小三角高度默认10
+    double? triangleHeight,
+
+    ///小三角宽度 默认14
+    double? triangleWidth,
+  }) {
+    showDialog(
+      context: context,
+      useSafeArea: false,
+      barrierDismissible: false,
+      builder: (context) {
+        return PopupView(
+          originKey: originKey,
+          itemsData: itemsData,
+          clickCallback: clickCallback,
+          noTriangle: noTriangle,
+          selText: selectedText,
+          bgColor: backgroundColor,
+          itemHeight: itemHeight,
+          itemWidth: itemWidth,
+          itemIconColor: itemIconColor,
+          itemSelectedColor: itemSelectedColor,
+          itemTitleColor: itemTitleColor,
+          triangleWidth: triangleWidth,
+          triangleHeight: triangleHeight,
+          dividerColor: dividerColor,
         );
       },
     );

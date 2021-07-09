@@ -26,10 +26,6 @@ fake_async
 2.12
 file:///Users/admin/.pub-cache/hosted/pub.flutter-io.cn/fake_async-1.2.0/
 file:///Users/admin/.pub-cache/hosted/pub.flutter-io.cn/fake_async-1.2.0/lib/
-js
-2.12
-file:///Users/admin/.pub-cache/hosted/pub.flutter-io.cn/js-0.6.3/
-file:///Users/admin/.pub-cache/hosted/pub.flutter-io.cn/js-0.6.3/lib/
 matcher
 2.12
 file:///Users/admin/.pub-cache/hosted/pub.flutter-io.cn/matcher-0.12.10/
@@ -76,8 +72,8 @@ file:///Users/admin/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.1.0/
 file:///Users/admin/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.1.0/lib/
 alert_tool
 2.12
-file:///Users/admin/Desktop/alert_tool/
-file:///Users/admin/Desktop/alert_tool/lib/
+file:///Users/admin/Documents/flutter_plugin/alert_tool/
+file:///Users/admin/Documents/flutter_plugin/alert_tool/lib/
 sky_engine
 2.12
 file:///Users/admin/flutter/bin/cache/pkg/sky_engine/
@@ -90,8 +86,4 @@ flutter_test
 2.12
 file:///Users/admin/flutter/packages/flutter_test/
 file:///Users/admin/flutter/packages/flutter_test/lib/
-flutter_web_plugins
-2.12
-file:///Users/admin/flutter/packages/flutter_web_plugins/
-file:///Users/admin/flutter/packages/flutter_web_plugins/lib/
 2
