@@ -87,6 +87,7 @@ $ flutter packages get
   );
 ```
 * 预览
+
 ![image](https://shineyoki.oss-cn-beijing.aliyuncs.com/confirm_alert.gif)
 #### 底部弹出的选择提示弹窗
 * Usage
@@ -143,6 +144,7 @@ $ flutter packages get
       );
 ```
 * 预览
+
 ![image](https://shineyoki.oss-cn-beijing.aliyuncs.com/bottomSheet.gif)
 #### 输入弹窗
 * Usage
@@ -219,6 +221,7 @@ $ flutter packages get
     );
 ```
 * 预览
+
 ![image](https://shineyoki.oss-cn-beijing.aliyuncs.com/input_alert.gif)
 #### 按钮正下方弹窗
 * Usage
@@ -310,4 +313,5 @@ showPopMenu(
     );
 ```
 * 预览
+
 ![image](https://shineyoki.oss-cn-beijing.aliyuncs.com/position_alert.gif)
