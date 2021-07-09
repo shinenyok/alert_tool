@@ -1,6 +1,6 @@
 # alert_tool
 
-A flutter plugin imitates iOS style pop-up window
+A flutter plugin imitates iOS style pop-up window，Provide a variety of highly customized pop-up styles, such as text pop-up, input pop-up, bottom list pop-up, specific location pop-up, etc
 
 ## Getting Started
 
