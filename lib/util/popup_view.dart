@@ -71,6 +71,9 @@ class PopupView extends StatefulWidget {
   ///小三角宽度默认14
   final double? triangleWidth;
 
+  ///列表弹窗最大高度，若设置最大高度则可滑动 否则高度自适应
+  final double? maxHeight;
+
   const PopupView({
     Key? key,
     required this.originKey,
@@ -87,6 +90,7 @@ class PopupView extends StatefulWidget {
     this.triangleHeight,
     this.triangleWidth,
     this.noTriangle,
+    this.maxHeight,
   }) : super(key: key);
 
   @override
@@ -143,6 +147,11 @@ class _PopupViewState extends State<PopupView> {
           ClipRRect(
             borderRadius: BorderRadius.circular(4),
             child: Container(
+              constraints: widget.maxHeight == null
+                  ? null
+                  : BoxConstraints(
+                      maxHeight: widget.maxHeight!,
+                    ),
               color: widget.bgColor ?? Colors.black54,
               width: widget.itemWidth ?? 120,
               child: _buildMenuLineCell(itemsData),
@@ -159,7 +168,9 @@ class _PopupViewState extends State<PopupView> {
       shrinkWrap: true,
       itemCount: itemsData.length,
       padding: EdgeInsets.zero,
-      physics: const NeverScrollableScrollPhysics(),
+      physics: widget.maxHeight == null
+          ? const NeverScrollableScrollPhysics()
+          : const AlwaysScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return SizedBox(
           height: widget.itemHeight ?? 50,

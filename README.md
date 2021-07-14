@@ -8,7 +8,7 @@ A flutter plugin imitates iOS style pop-up window，Provide a variety of highly 
 
 ```yaml
 dependencies:
-  alert_tool: ^0.0.2
+  alert_tool: ^0.0.3
 ```
 
 ### 2 You can install packages from the command line:
@@ -270,6 +270,9 @@ showPopMenu(
 
     ///小三角宽度 默认14
     double? triangleWidth,
+
+    ///列表弹窗最大高度，若设置最大高度则列表可滑动 否则高度自适应
+    final double? maxHeight,
   }) {
     showDialog(
       context: context,
@@ -291,6 +294,7 @@ showPopMenu(
           triangleWidth: triangleWidth,
           triangleHeight: triangleHeight,
           dividerColor: dividerColor,
+          maxHeight: maxHeight,
         );
       },
     );

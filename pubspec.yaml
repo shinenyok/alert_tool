@@ -1,6 +1,6 @@
 name: alert_tool
-description: A flutter plugin imitates iOS style pop-up window，Provide a variety of highly customized pop-up styles, such as text pop-up, input pop-up, bottom list pop-up, specific location pop-up, etc.
-version: 0.0.2
+description: A flutter plugin imitates iOS style pop-up window，Provide a variety of highly customized pop-up styles.
+version: 0.0.3
 homepage: https://github.com/shinenyok/alert_tool
 repository: https://github.com/shinenyok/alert_tool
 
@@ -25,18 +25,6 @@ flutter:
   # The 'pluginClass' and Android 'package' identifiers should not ordinarily
   # be modified. They are used by the tooling to maintain consistency when
   # adding or updating assets for this project.
-  plugin:
-    platforms:
-      android:
-        package: com.example.alert_tool
-        pluginClass: AlertToolPlugin
-      ios:
-        pluginClass: AlertToolPlugin
-      macos:
-        pluginClass: AlertToolPlugin
-      web:
-        pluginClass: AlertToolWeb
-        fileName: alert_tool_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
