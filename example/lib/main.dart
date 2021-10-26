@@ -4,7 +4,9 @@ import 'package:alert_tool/alert_tool.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: MyApp(),
+    home: Scaffold(
+      body: MyApp(),
+    ),
   ));
 }
 
@@ -17,6 +19,7 @@ class _MyAppState extends State<MyApp> {
   GlobalKey _rightKey = GlobalKey();
   GlobalKey _key = GlobalKey();
   String selectedText = '';
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -159,6 +162,46 @@ class _MyAppState extends State<MyApp> {
                 alignment: Alignment.center,
                 width: 60,
                 child: Text(selectedText.isNotEmpty ? selectedText : '中间弹窗'),
+              ),
+            ),
+            TextButton.icon(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.cyan),
+              ),
+              onPressed: () {
+                showBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Container(
+                        height: 300,
+                        child: BottomSheetView(
+                          title: '选择一级渠道',
+                          options: [
+                            "发起群",
+                            '添加朋',
+                            "扫一扫",
+                            "收付款",
+                            "发起群",
+                            "添加朋",
+                            "扫一扫",
+                            "收付款",
+                            "发起群",
+                            "添加朋",
+                            "扫一扫",
+                            "收付款",
+                            "发起群",
+                            "添加朋"
+                          ],
+                          didOptionSelected: (x) {},
+                        ),
+                      );
+                    });
+              },
+              label: SizedBox.shrink(),
+              icon: Container(
+                alignment: Alignment.center,
+                width: 60,
+                child: Text(selectedText.isNotEmpty ? selectedText : '88888'),
               ),
             ),
           ],

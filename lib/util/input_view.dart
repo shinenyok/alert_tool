@@ -13,45 +13,45 @@ class InputView extends StatefulWidget {
   final String title;
 
   ///最大行数
-  final int? maxLines;
+  final int maxLines;
 
   ///文字最大长度
-  final int? maxLength;
+  final int maxLength;
 
   ///占位符
-  final String? placeholder;
+  final String placeholder;
 
   ///取消文字描述
-  final String? cancelText;
+  final String cancelText;
 
   ///确定文字描述
-  final String? confirmText;
+  final String confirmText;
 
   ///取消动作
-  final Function? cancelAction;
+  final Function cancelAction;
 
   ///确定按钮文字样式
-  final TextStyle? titleTextStyle;
+  final TextStyle titleTextStyle;
 
   ///取消按钮文字样式
-  final TextStyle? cancelTextStyle;
+  final TextStyle cancelTextStyle;
 
   ///确定按钮文字样式
-  final TextStyle? confirmTextStyle;
+  final TextStyle confirmTextStyle;
 
   ///占位符文字样式
-  final TextStyle? placeholderStyle;
+  final TextStyle placeholderStyle;
 
   ///确定按钮动作返回选项
   final Function(String output) confirmAction;
 
   const InputView({
-    Key? key,
+    Key key,
     this.maxLines,
     this.maxLength,
     this.placeholder,
-    required this.title,
-    required this.confirmAction,
+    @required this.title,
+    @required this.confirmAction,
     this.cancelText,
     this.confirmText,
     this.cancelAction,

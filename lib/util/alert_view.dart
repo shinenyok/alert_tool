@@ -9,41 +9,41 @@ import 'package:flutter/material.dart';
 
 class AlertView extends StatelessWidget {
   ///标题
-  final String? title;
+  final String title;
 
   ///内容
   final String content;
 
   ///标题样式
-  final TextStyle? titleTextStyle;
+  final TextStyle titleTextStyle;
 
   ///内容样式
-  final TextStyle? contentTextStyle;
+  final TextStyle contentTextStyle;
 
   ///确定样式
-  final TextStyle? confirmTextStyle;
+  final TextStyle confirmTextStyle;
 
   ///取消样式
-  final TextStyle? cancelTextStyle;
+  final TextStyle cancelTextStyle;
 
   ///确定文字描述
-  final String? confirmText;
+  final String confirmText;
 
   ///确定回调
   final Function confirmAction;
 
   ///取消文字描述
-  final String? cancelText;
+  final String cancelText;
 
   ///取消回调
-  final Function? cancelAction;
+  final Function cancelAction;
 
   const AlertView({
-    Key? key,
-    required this.confirmAction,
+    Key key,
+    @required this.confirmAction,
     this.cancelAction,
     this.title,
-    required this.content,
+    @required this.content,
     this.titleTextStyle,
     this.contentTextStyle,
     this.confirmTextStyle,

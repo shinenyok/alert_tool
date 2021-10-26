@@ -10,11 +10,11 @@ import 'package:flutter/material.dart';
 ///item数据模型
 class PopModel {
   final String name;
-  final IconData? icon;
-  final int? id;
+  final IconData icon;
+  final int id;
 
   PopModel({
-    required this.name,
+    @required this.name,
     this.icon,
     this.id,
   });
@@ -36,48 +36,48 @@ class PopupView extends StatefulWidget {
   final List<PopModel> itemsData;
 
   ///item点击选中时回调
-  final Function(int, PopModel)? clickCallback;
+  final Function(int, PopModel) clickCallback;
 
   ///不展示小三角
-  final bool? noTriangle;
+  final bool noTriangle;
 
   ///弹窗背景色
-  final Color? bgColor;
+  final Color bgColor;
 
   ///默认选中的item标题
-  final String? selText;
+  final String selText;
 
   ///item字体颜色
-  final Color? itemTitleColor;
+  final Color itemTitleColor;
 
   ///item图标颜色
-  final Color? itemIconColor;
+  final Color itemIconColor;
 
   ///item选中时字体颜色
-  final Color? itemSelectedColor;
+  final Color itemSelectedColor;
 
   ///item高度 默认50
-  final double? itemHeight;
+  final double itemHeight;
 
   ///item宽度 默认120
-  final double? itemWidth;
+  final double itemWidth;
 
   ///item间隔线颜色
-  final Color? dividerColor;
+  final Color dividerColor;
 
   ///小三角高度默认10
-  final double? triangleHeight;
+  final double triangleHeight;
 
   ///小三角宽度默认14
-  final double? triangleWidth;
+  final double triangleWidth;
 
   ///列表弹窗最大高度，若设置最大高度则可滑动 否则高度自适应
-  final double? maxHeight;
+  final double maxHeight;
 
   const PopupView({
-    Key? key,
-    required this.originKey,
-    required this.itemsData,
+    Key key,
+    @required this.originKey,
+    @required this.itemsData,
     this.bgColor,
     this.itemTitleColor,
     this.itemIconColor,
@@ -98,7 +98,7 @@ class PopupView extends StatefulWidget {
 }
 
 class _PopupViewState extends State<PopupView> {
-  String? _selText;
+  String _selText;
 
   @override
   void initState() {
@@ -123,7 +123,7 @@ class _PopupViewState extends State<PopupView> {
   ///弹出框view
   _buildMenusView(List<PopModel> itemsData) {
     RenderBox box =
-        widget.originKey.currentContext!.findRenderObject()! as RenderBox;
+        widget.originKey.currentContext.findRenderObject() as RenderBox;
     double topEdge = box.localToGlobal(Offset.zero).dy + box.size.height;
     double rightEdge = MediaQueryData.fromWindow(window).size.width -
         box.localToGlobal(Offset.zero).dx -
@@ -150,7 +150,7 @@ class _PopupViewState extends State<PopupView> {
               constraints: widget.maxHeight == null
                   ? null
                   : BoxConstraints(
-                      maxHeight: widget.maxHeight!,
+                      maxHeight: widget.maxHeight,
                     ),
               color: widget.bgColor ?? Colors.black54,
               width: widget.itemWidth ?? 120,
@@ -188,7 +188,7 @@ class _PopupViewState extends State<PopupView> {
             icon: itemsData[index].icon == null
                 ? SizedBox.shrink()
                 : Icon(
-                    itemsData[index].icon!,
+                    itemsData[index].icon,
                     color: widget.itemIconColor ?? Colors.white,
                   ),
             label: Column(
@@ -221,9 +221,9 @@ class _PopupViewState extends State<PopupView> {
 
 ///绘制小三角
 class TriangleUpPainter extends CustomPainter {
-  late Color color; //填充颜色
-  late Paint _paint; //画笔
-  late Path _path; //绘制路径
+   Color color; //填充颜色
+   Paint _paint; //画笔
+   Path _path; //绘制路径
   // late double angle; //角度
 
   TriangleUpPainter(Color color) {
@@ -258,7 +258,7 @@ class TriangleUpWidget extends StatefulWidget {
   final Color color;
 
   TriangleUpWidget(
-      {Key? key, this.height = 14, this.width = 16, required this.color})
+      {Key key, this.height = 14, this.width = 16, @required this.color})
       : super(key: key);
 
   @override
