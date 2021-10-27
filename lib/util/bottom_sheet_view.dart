@@ -7,7 +7,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class BottomSheetView extends StatelessWidget {
+class BottomSheetView extends StatefulWidget {
   ///标题文字描述
   final String title;
 
@@ -43,29 +43,38 @@ class BottomSheetView extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  _BottomSheetViewState createState() => _BottomSheetViewState();
+}
+
+class _BottomSheetViewState extends State<BottomSheetView> {
+
+
+  int selectedIndex = 0;
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      child: iosStyle
+      child: widget.iosStyle
           ? CupertinoActionSheet(
               title: Text(
-                title,
-                style: titleTextStyle ??
+                widget.title,
+                style: widget.titleTextStyle ??
                     TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
               ),
-              actions: options
+              actions: widget.options
                   .map(
                     (e) => CupertinoActionSheetAction(
                       onPressed: () {
-                        didOptionSelected.call(e);
+                        widget.didOptionSelected.call(e);
                       },
                       child: Text(
                         e,
-                        style: optionTextStyle,
+                        style: widget.optionTextStyle,
                       ),
                     ),
                   )
@@ -76,7 +85,7 @@ class BottomSheetView extends StatelessWidget {
                 },
                 child: Text(
                   '取消',
-                  style: cancelTextStyle,
+                  style: widget.cancelTextStyle,
                 ),
               ),
             )
@@ -94,10 +103,13 @@ class BottomSheetView extends StatelessWidget {
                         },
                         child: Text('取消'),
                       ),
-                      Text(title),
+                      Text(widget.title),
                       TextButton(
                         onPressed: () {
-
+                          if (widget.didIndexSelected != null) {
+                            widget.didIndexSelected(selectedIndex);
+                          }
+                          Navigator.of(context).pop();
                         },
                         child: Text('确定'),
                       )
@@ -110,16 +122,13 @@ class BottomSheetView extends StatelessWidget {
                 Expanded(
                   child: ListWheelScrollView(
                     onSelectedItemChanged: (index) {
-                      if (didIndexSelected != null) {
-                        didIndexSelected(index);
-                      }
-                      print('selected index-----$index');
+                      selectedIndex = index;
                     },
                     squeeze: 1,
                     useMagnifier: true,
                     magnification: 1.5,
                     itemExtent: 40,
-                    children: options
+                    children: widget.options
                         .map(
                           (e) => Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
