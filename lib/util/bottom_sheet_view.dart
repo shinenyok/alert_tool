@@ -28,7 +28,7 @@ class BottomSheetView extends StatefulWidget {
 
   final Function(int index) didIndexSelected;
 
-  final bool iosStyle;
+  final bool isSheetStyle;
 
   const BottomSheetView({
     Key key,
@@ -38,7 +38,7 @@ class BottomSheetView extends StatefulWidget {
     this.titleTextStyle,
     this.optionTextStyle,
     this.cancelTextStyle,
-    this.iosStyle = false,
+    this.isSheetStyle = false,
     this.didIndexSelected,
   }) : super(key: key);
 
@@ -47,23 +47,21 @@ class BottomSheetView extends StatefulWidget {
 }
 
 class _BottomSheetViewState extends State<BottomSheetView> {
-
-
   int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.transparent,
-      child: widget.iosStyle
+      height: 300,
+      color: Colors.white,
+      child: widget.isSheetStyle ?? false
           ? CupertinoActionSheet(
               title: Text(
                 widget.title,
                 style: widget.titleTextStyle ??
                     TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      color: Color(0xFF3F454F),
+                      fontSize: 17,
                     ),
               ),
               actions: widget.options
@@ -91,9 +89,11 @@ class _BottomSheetViewState extends State<BottomSheetView> {
             )
           : Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
                   height: 50,
+                  width: double.infinity,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -101,9 +101,25 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        child: Text('取消'),
+                        child: Text(
+                          '取消',
+                          style: TextStyle(
+                            color: Color(0xFF646B77),
+                            fontSize: 16,
+                          ),
+                        ),
                       ),
-                      Text(widget.title),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          widget.title,
+                          style: widget.titleTextStyle ??
+                              TextStyle(
+                                color: Color(0xFF3F454F),
+                                fontSize: 17,
+                              ),
+                        ),
+                      ),
                       TextButton(
                         onPressed: () {
                           if (widget.didIndexSelected != null) {
@@ -111,7 +127,13 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                           }
                           Navigator.of(context).pop();
                         },
-                        child: Text('确定'),
+                        child: Text(
+                          '确定',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Color(0xFF3581FF),
+                          ),
+                        ),
                       )
                     ],
                   ),
@@ -120,24 +142,26 @@ class _BottomSheetViewState extends State<BottomSheetView> {
                   height: 1,
                 ),
                 Expanded(
-                  child: ListWheelScrollView(
+                  child: CupertinoPicker(
                     onSelectedItemChanged: (index) {
                       selectedIndex = index;
                     },
                     squeeze: 1,
                     useMagnifier: true,
-                    magnification: 1.5,
+                    magnification: 1.4,
                     itemExtent: 40,
                     children: widget.options
                         .map(
-                          (e) => Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(e),
-                              Divider(
-                                height: 1,
-                              )
-                            ],
+                          (e) => Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 17),
+                            child: Text(
+                              e,
+                              style: TextStyle(
+                                fontSize: 17,
+                              ),
+                              textAlign: TextAlign.center,
+                              overflow: TextOverflow.visible,
+                            ),
                           ),
                         )
                         .toList(),

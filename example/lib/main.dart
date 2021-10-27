@@ -110,6 +110,9 @@ class _MyAppState extends State<MyApp> {
                   options: [
                     '男',
                     '女',
+                    '女请选择性别请选择性别请选择性别请选择性别请选择性别请选择性别请选择性别',
+                    '男',
+                    '女',
                   ],
                   didOptionSelected: (value) {
                     print('7877we787y32yy77823ye7---$value');

@@ -86,6 +86,7 @@ class AlertTool {
     ///弹窗取消文字样式
     TextStyle cancelTextStyle,
 
+    bool isSheetStyle,
     ///弹窗选项选中返回选项内容
     @required Function(String option) didOptionSelected,
   }) {
@@ -94,7 +95,7 @@ class AlertTool {
       builder: (context) {
         return BottomSheetView(
           title: title,
-          iosStyle: true,
+          isSheetStyle: isSheetStyle,
           options: options,
           titleTextStyle: titleTextStyle,
           optionTextStyle: optionTextStyle,
