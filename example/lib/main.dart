@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> {
                 AlertTool.showTipAlert(
                   context: context,
                   title: '陈老师发送给你作业笔记',
-                  content: '是否接收',
+                  content: '发送给王浩然\n已选中：10条线索',
                   confirmAction: () async {
                     print('888q99w88q8w8w98--确定-}');
                     Navigator.pop(context);

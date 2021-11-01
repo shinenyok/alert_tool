@@ -57,35 +57,45 @@ class AlertView extends StatelessWidget {
     return Container(
       color: Colors.transparent,
       child: CupertinoAlertDialog(
-        content: Column(
-          children: <Widget>[
+        title: Column(
+          children: [
             Text(
               title ?? "提示",
               style: titleTextStyle ??
                   TextStyle(
-                    color: Colors.black,
+                    color: Color(0xFF3F454F),
                     fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                    fontSize: 17,
                   ),
             ),
             SizedBox(
-              height: 15,
+              height: 10,
             ),
-            ConstrainedBox(
-              constraints: BoxConstraints(maxHeight: 100),
+            Divider(
+              height: 1,
+            ),
+          ],
+        ),
+        content: Column(
+          children: <Widget>[
+            Container(
+              alignment: Alignment.center,
+              height: 78,
               child: SingleChildScrollView(
                 child: Container(
                   child: Text(
                     content,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
+                      color: Color(0xFF3F454F),
+                      fontSize: 15,
+                      height: 1.8,
                     ),
                     maxLines: null,
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
         actions: <Widget>[
@@ -93,7 +103,11 @@ class AlertView extends StatelessWidget {
             isDestructiveAction: true,
             child: Text(
               cancelText ?? "取消",
-              style: cancelTextStyle,
+              style: cancelTextStyle??TextStyle(
+                color: Color(0xFF666666),
+                fontSize: 17,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             onPressed: () {
               cancelAction?.call();
@@ -104,7 +118,11 @@ class AlertView extends StatelessWidget {
             isDefaultAction: true,
             child: Text(
               confirmText ?? "确定",
-              style: confirmTextStyle,
+              style: confirmTextStyle??TextStyle(
+                color: Color(0xFF3581FF),
+                fontSize: 17,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             onPressed: () {
               confirmAction.call();
