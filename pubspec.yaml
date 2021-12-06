@@ -1,6 +1,6 @@
 name: alert_tool
 description: A flutter plugin imitates iOS style pop-up window，Provide a variety of highly customized pop-up styles.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/shinenyok/alert_tool
 repository: https://github.com/shinenyok/alert_tool
 

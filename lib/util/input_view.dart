@@ -75,7 +75,8 @@ class _InputViewState extends State<InputView> {
         widget.title,
         style: widget.titleTextStyle,
       ),
-      content: ConstrainedBox(
+      content: Container(
+        padding: EdgeInsets.symmetric(vertical: 20),
         constraints: BoxConstraints(maxHeight: 160),
         child: CupertinoTextField(
           placeholder: widget.placeholder,

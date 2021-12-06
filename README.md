@@ -319,3 +319,29 @@ showPopMenu(
 * 预览
 
 ![image](https://shineyoki.oss-cn-beijing.aliyuncs.com/position_alert.gif)
+
+*带标题以及取消确认的底部弹窗
+```
+                AlertTool.showBottomPicker(
+                  context: context,
+                  title: '选择年级',
+                  options: [
+                    '一年级',
+                    '二年级',
+                    '三年级',
+                    '四年级',
+                    '五年级',
+                    '六年级',
+                    '七年级',
+                    '八年级',
+                    '九年级',
+                    '十年级',
+                    '十一年级',
+                    '十二年级',
+                  ],
+                  didIndexSelected: (index) {
+                    print('7877we787y32yy77823ye7---$index');
+                    Navigator.pop(context);
+                  },
+                );
+```

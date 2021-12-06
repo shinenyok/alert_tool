@@ -26,7 +26,7 @@ class BottomSheetView extends StatelessWidget {
   ///确定选中选项
   final Function(String option) didOptionSelected;
 
-  const BottomSheetView({
+  BottomSheetView({
     Key? key,
     required this.title,
     required this.options,
@@ -36,6 +36,12 @@ class BottomSheetView extends StatelessWidget {
     this.cancelTextStyle,
   }) : super(key: key);
 
+  final TextStyle defaultTextStyle = TextStyle(
+    color: Color(0xFF3F454F),
+    fontWeight: FontWeight.bold,
+    fontSize: 18,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,12 +49,7 @@ class BottomSheetView extends StatelessWidget {
       child: CupertinoActionSheet(
         title: Text(
           title,
-          style: titleTextStyle ??
-              TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
+          style: titleTextStyle ?? defaultTextStyle,
         ),
         actions: options
             .map(

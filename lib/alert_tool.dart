@@ -4,6 +4,7 @@
  * @description: flutter
  */
 
+import 'package:alert_tool/util/cupertino_sheet.dart';
 import 'package:alert_tool/util/popup_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -61,6 +62,43 @@ class AlertTool {
           cancelTextStyle: cancelTextStyle,
           confirmTextStyle: confirmTextStyle,
           contentTextStyle: contentTextStyle,
+        );
+      },
+    );
+  }
+
+  ///底部弹出的选择弹窗
+  static showBottomPicker({
+    required BuildContext context,
+
+    ///弹窗标题
+    required String title,
+
+    ///弹窗选项列表
+    required List<String> options,
+
+    ///弹窗标题文字样式
+    TextStyle? titleTextStyle,
+
+    ///弹窗选项文字样式
+    TextStyle? optionTextStyle,
+
+    ///弹窗取消文字样式
+    TextStyle? cancelTextStyle,
+
+    ///弹窗选项选中返回选项内容
+    required Function(int index) didIndexSelected,
+  }) {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (context) {
+        return CupertinoSheet(
+          title: title,
+          options: options,
+          titleTextStyle: titleTextStyle,
+          optionTextStyle: optionTextStyle,
+          cancelTextStyle: cancelTextStyle,
+          didIndexSelected: didIndexSelected,
         );
       },
     );
